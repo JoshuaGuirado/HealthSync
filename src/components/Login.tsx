@@ -24,13 +24,13 @@ export function Login({ onLogin }: LoginProps) {
   return (
     <div className="min-h-screen flex bg-[#0f172a] font-sans relative overflow-hidden">
       {/* Background Animated Circles */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-500/10 blur-3xl animate-pulse duration-[10000ms]"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-pink-500/10 blur-3xl animate-pulse duration-[8000ms]"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-500/10 blur-3xl animate-pulse duration-[10000ms]"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-cyan-500/10 blur-3xl animate-pulse duration-[8000ms]"></div>
 
       {/* Left Side - Branding & Value Prop */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden items-center justify-center border-r border-slate-800/50">
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-950 via-slate-950 to-purple-950 z-0"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/30 via-transparent to-transparent z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-950 via-slate-950 to-slate-950 z-0"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-transparent to-transparent z-0"></div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -39,10 +39,10 @@ export function Login({ onLogin }: LoginProps) {
           className="relative z-10 p-16 text-white max-w-2xl space-y-12"
         >
           <div className="flex items-center space-x-3.5">
-            <div className="bg-gradient-premium p-2.5 rounded-2xl shadow-lg shadow-indigo-500/20">
+            <div className="bg-gradient-premium p-2.5 rounded-2xl shadow-lg shadow-blue-500/20">
               <Activity className="w-7 h-7 text-white" />
             </div>
-            <span className="text-3xl font-display font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-100 to-indigo-300">
+            <span className="text-3xl font-display font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-300">
               Health Sync
             </span>
           </div>
@@ -50,7 +50,7 @@ export function Login({ onLogin }: LoginProps) {
           <div className="space-y-6">
             <h1 className="text-5xl font-display font-extrabold leading-tight tracking-tight">
               Seu histórico médico,<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400">
                 centralizado e inteligente.
               </span>
             </h1>
@@ -66,13 +66,13 @@ export function Login({ onLogin }: LoginProps) {
                 icon: ShieldCheck,
                 title: 'Privacidade & Anonimização',
                 desc: 'Seus dados são lidos pela IA com segurança e anonimização de informações sensíveis.',
-                color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20'
+                color: 'text-blue-400 bg-blue-500/10 border-blue-500/20'
               },
               {
                 icon: HeartPulse,
                 title: 'Controle Total do Paciente',
                 desc: 'Você é o proprietário dos seus dados médicos, prontuários e carteiras de imunizações.',
-                color: 'text-pink-400 bg-pink-500/10 border-pink-500/20'
+                color: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20'
               }
             ].map((prop, idx) => (
               <div key={idx} className="flex items-start space-x-4">
@@ -95,7 +95,7 @@ export function Login({ onLogin }: LoginProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="w-full max-w-md bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl border border-slate-800 shadow-2xl shadow-indigo-950/20"
+          className="w-full max-w-md bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl border border-slate-800 shadow-2xl shadow-blue-950/20"
         >
           {/* Logo on Mobile */}
           <div className="lg:hidden flex items-center space-x-2.5 mb-8 justify-center">
@@ -117,7 +117,7 @@ export function Login({ onLogin }: LoginProps) {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-2xl border border-slate-800 bg-slate-950/40 text-slate-200 placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                className="w-full px-4 py-3 rounded-2xl border border-slate-800 bg-slate-950/40 text-slate-200 placeholder-slate-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 placeholder="exemplo@email.com"
                 required
               />
@@ -126,13 +126,13 @@ export function Login({ onLogin }: LoginProps) {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="block text-sm font-semibold text-slate-300">Senha</label>
-                <a href="#" className="text-xs text-indigo-400 hover:text-indigo-300 font-bold transition-colors">Esqueceu a senha?</a>
+                <a href="#" className="text-xs text-blue-400 hover:text-blue-300 font-bold transition-colors">Esqueceu a senha?</a>
               </div>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-2xl border border-slate-800 bg-slate-950/40 text-slate-200 placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                className="w-full px-4 py-3 rounded-2xl border border-slate-800 bg-slate-950/40 text-slate-200 placeholder-slate-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 required
               />
             </div>
@@ -140,7 +140,7 @@ export function Login({ onLogin }: LoginProps) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex items-center justify-center py-3.5 px-4 rounded-2xl text-sm font-bold text-white bg-gradient-premium hover:opacity-95 active:scale-[0.98] transition-all shadow-lg shadow-indigo-500/20 disabled:opacity-75 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center py-3.5 px-4 rounded-2xl text-sm font-bold text-white bg-gradient-premium hover:opacity-95 active:scale-[0.98] transition-all shadow-lg shadow-blue-500/20 disabled:opacity-75 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

@@ -73,7 +73,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
             <h2 className="text-2xl font-display font-extrabold text-slate-900 tracking-tight">
               {formData.nome}
             </h2>
-            <span className="inline-block px-3 py-1 mt-2 text-xs font-bold bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-full">
+            <span className="inline-block px-3 py-1 mt-2 text-xs font-bold bg-blue-50 border border-blue-100 text-blue-600 rounded-full">
               Paciente Premium
             </span>
           </div>
@@ -82,7 +82,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
         {!isEditing ? (
           <button
             onClick={() => setIsEditing(true)}
-            className="flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
+            className="flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
           >
             <Edit3 className="w-4 h-4 mr-2" />
             Editar Perfil
@@ -98,7 +98,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
             </button>
             <button
               onClick={handleSave}
-              className="flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-md active:scale-95"
+              className="flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-md active:scale-95"
             >
               <Save className="w-4 h-4 mr-2" />
               Salvar
@@ -114,7 +114,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
           {/* Personal Information Column */}
           <div className="space-y-6">
             <h3 className="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2.5 font-display flex items-center">
-              <User className="w-5 h-5 mr-2 text-indigo-500" />
+              <User className="w-5 h-5 mr-2 text-blue-500" />
               Informações Pessoais
             </h3>
             
@@ -127,7 +127,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="text"
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                     required
                   />
                 </div>
@@ -141,7 +141,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                     required
                   />
                 ) : (
@@ -160,7 +160,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="text"
                     value={formData.telefone}
                     onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                     placeholder="(11) 98765-4321"
                   />
                 ) : (
@@ -179,7 +179,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="text"
                     value={formData.dataNascimento}
                     onChange={(e) => setFormData({ ...formData, dataNascimento: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                     placeholder="15/04/1990"
                   />
                 ) : (
@@ -198,7 +198,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="text"
                     value={formData.localizacao}
                     onChange={(e) => setFormData({ ...formData, localizacao: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                   />
                 ) : (
                   <div className="flex items-center text-slate-700 text-sm py-2">
@@ -213,7 +213,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
           {/* Medical Data Column */}
           <div className="space-y-6">
             <h3 className="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2.5 font-display flex items-center">
-              <Activity className="w-5 h-5 mr-2 text-indigo-500" />
+              <Activity className="w-5 h-5 mr-2 text-blue-500" />
               Dados Médicos
             </h3>
             
@@ -225,7 +225,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                   <select
                     value={formData.tipoSanguineo}
                     onChange={(e) => setFormData({ ...formData, tipoSanguineo: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                   >
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
@@ -253,7 +253,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="text"
                     value={formData.alergias}
                     onChange={(e) => setFormData({ ...formData, alergias: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                     placeholder="Ex: Penicilina, Amendoim"
                   />
                 ) : (
@@ -282,7 +282,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="text"
                     value={formData.condicoesCronicas}
                     onChange={(e) => setFormData({ ...formData, condicoesCronicas: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                     placeholder="Ex: Hipertensão, Diabetes"
                   />
                 ) : (
@@ -301,7 +301,7 @@ export function Profile({ profile, onUpdateProfile }: ProfileProps) {
                     type="text"
                     value={formData.contatoEmergencia}
                     onChange={(e) => setFormData({ ...formData, contatoEmergencia: e.target.value })}
-                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
+                    className="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white text-sm font-semibold"
                     placeholder="Ex: Maria (Mãe) - (11) 91234-5678"
                   />
                 ) : (

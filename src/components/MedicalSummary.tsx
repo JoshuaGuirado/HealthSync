@@ -53,7 +53,7 @@ export function MedicalSummary({ exams }: MedicalSummaryProps) {
       {/* Header Info */}
       <div className="px-6 py-5 border-b border-slate-100 bg-gradient-premium-soft flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center space-x-3.5">
-          <div className="p-2.5 bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-2xl shadow-sm">
+          <div className="p-2.5 bg-blue-50 border border-blue-100 text-blue-600 rounded-2xl shadow-sm">
             <Sparkles className="w-5 h-5 animate-pulse" />
           </div>
           <div>
@@ -65,7 +65,7 @@ export function MedicalSummary({ exams }: MedicalSummaryProps) {
         <button
           onClick={handleGenerate}
           disabled={isGenerating}
-          className="flex items-center px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl transition-all shadow-md hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex items-center px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all shadow-md hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isGenerating ? (
             <>
@@ -103,7 +103,7 @@ export function MedicalSummary({ exams }: MedicalSummaryProps) {
         
         {!summary && !isGenerating && (
           <div className="text-center py-16 border-2 border-dashed border-slate-100 rounded-2xl">
-            <Sparkles className="w-10 h-10 text-indigo-400/80 mx-auto mb-3 animate-bounce" />
+            <Sparkles className="w-10 h-10 text-blue-400/80 mx-auto mb-3 animate-bounce" />
             <h4 className="text-sm font-bold text-slate-800">Pronto para gerar o resumo</h4>
             <p className="text-xs text-slate-400 mt-1 max-w-sm mx-auto leading-relaxed">
               Clique no botão superior para que a Inteligência Artificial faça a varredura e analise de todos os seus exames, gerando um resumo unificado em formato de laudo clínico.
@@ -114,8 +114,8 @@ export function MedicalSummary({ exams }: MedicalSummaryProps) {
         {isGenerating && (
           <div className="flex flex-col items-center justify-center py-20 space-y-4">
             <div className="relative">
-              <div className="w-14 h-14 rounded-full border-4 border-indigo-100 border-t-indigo-600 animate-spin"></div>
-              <Sparkles className="w-5 h-5 text-indigo-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+              <div className="w-14 h-14 rounded-full border-4 border-blue-100 border-t-blue-600 animate-spin"></div>
+              <Sparkles className="w-5 h-5 text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
             </div>
             <p className="text-slate-500 font-bold text-sm animate-pulse">Lendo exames e construindo relatório...</p>
           </div>
@@ -128,9 +128,9 @@ export function MedicalSummary({ exams }: MedicalSummaryProps) {
             className="bg-[#fdfdfd] border border-slate-150 p-6 rounded-2xl shadow-inner relative"
           >
             {/* Medical Sheet Background Lines */}
-            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-indigo-500/80 rounded-l-2xl"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500/80 rounded-l-2xl"></div>
             
-            <div className="prose prose-indigo max-w-none prose-sm prose-headings:font-bold prose-headings:font-display prose-strong:text-indigo-900 prose-ul:list-disc">
+            <div className="prose prose-blue max-w-none prose-sm prose-headings:font-bold prose-headings:font-display prose-strong:text-blue-900 prose-ul:list-disc">
               <Markdown>{summary}</Markdown>
             </div>
           </motion.div>

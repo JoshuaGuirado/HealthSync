@@ -83,7 +83,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
         {!isAdding && (
           <button
             onClick={() => setIsAdding(true)}
-            className="flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
+            className="flex items-center px-4 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
           >
             <Plus className="w-4.5 h-4.5 mr-2" />
             Nova Vacina
@@ -121,7 +121,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
                   required
                   value={formData.nome}
                   onChange={e => setFormData({...formData, nome: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                   placeholder="Ex: COVID-19, Influenza, Antitetânica"
                 />
               </div>
@@ -132,7 +132,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
                   required
                   value={formData.data}
                   onChange={e => setFormData({...formData, data: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                 />
               </div>
               <div>
@@ -142,7 +142,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
                   required
                   value={formData.dose}
                   onChange={e => setFormData({...formData, dose: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                   placeholder="Ex: 1ª Dose, Reforço, Dose Única"
                 />
               </div>
@@ -152,7 +152,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
                   type="text"
                   value={formData.lote}
                   onChange={e => setFormData({...formData, lote: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                   placeholder="Número do lote"
                 />
               </div>
@@ -162,8 +162,8 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
                   type="text"
                   value={formData.local}
                   onChange={e => setFormData({...formData, local: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
-                  placeholder="Ex: UBS Centro, Hospital Infantil, etc."
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  placeholder="Ex: UBS Centro, Clínica Imunizar, etc."
                 />
               </div>
               <div className="md:col-span-2">
@@ -204,7 +204,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
               </button>
               <button
                 type="submit"
-                className="px-4 py-2.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-colors shadow-sm"
+                className="px-4 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-colors shadow-sm"
               >
                 Salvar Vacina
               </button>
@@ -222,7 +222,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
             placeholder="Buscar vacinas na carteira..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold text-slate-700 bg-slate-50/50 focus:bg-white transition-all"
+            className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold text-slate-700 bg-slate-50/50 focus:bg-white transition-all"
           />
         </div>
       )}
@@ -260,7 +260,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
                       Imunizado
                     </span>
                   </div>
-                  <span className="shrink-0 inline-flex items-center px-3 py-1 rounded-xl text-xs font-bold bg-indigo-50 border border-indigo-100 text-indigo-600 shadow-sm shadow-indigo-100/50">
+                  <span className="shrink-0 inline-flex items-center px-3 py-1 rounded-xl text-xs font-bold bg-blue-50 border border-blue-100 text-blue-600 shadow-sm shadow-blue-100/50">
                     {vaccine.dose}
                   </span>
                 </div>
@@ -291,7 +291,7 @@ export function VaccinationCard({ vaccines, onAddVaccine, onRemoveVaccine }: Vac
                     href={vaccine.documentUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded-lg transition-all"
+                    className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
                   >
                     <Download className="w-3.5 h-3.5 mr-1" />
                     Comprovante

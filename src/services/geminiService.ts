@@ -20,7 +20,7 @@ export async function extractExamData(base64Data: string, mimeType: string) {
   try {
     const ai = getAiClient();
     const response = await ai.models.generateContent({
-      model: "gemini-3.1-pro-preview",
+      model: "gemini-2.5-flash",
       contents: [
         {
           inlineData: {
@@ -77,7 +77,7 @@ export async function generateMedicalSummary(exams: Exam[]) {
   try {
     const ai = getAiClient();
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.5-flash",
       contents: `Gere um resumo médico cronológico e conciso (Elevator Pitch Médico) baseado nos seguintes exames. 
       Destaque resultados alterados e tendências ao longo do tempo. 
       Seja direto, profissional e focado no que um médico precisaria saber em 1 minuto.
@@ -99,13 +99,7 @@ export async function generateMedicalSummary(exams: Exam[]) {
 export async function askMedicalRecord(exams: Exam[], question: string, history: {role: string, text: string}[] = []) {
   try {
     const ai = getAiClient();
-    const chat = ai.chats.create({
-      model: "gemini-3-flash-preview",
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION + "\\n\\nHistórico Médico do Paciente:\\n" + JSON.stringify(exams, null, 2),
-      }
-    });
-
+    
     // Replay history if needed, though for a simple prototype we might just send the context in the prompt
     // The @google/genai chat doesn't easily let us set history on create in a simple way without sending messages.
     // Let's just use generateContent with the full context for statelessness, which is easier for prototypes.
@@ -128,7 +122,7 @@ export async function askMedicalRecord(exams: Exam[], question: string, history:
     });
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.5-flash",
       contents: contents,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION

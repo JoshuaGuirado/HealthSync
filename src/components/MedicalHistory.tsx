@@ -119,7 +119,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-bold text-slate-900 font-display flex items-center">
-            <Clock className="w-6 h-6 mr-2 text-indigo-500" />
+            <Clock className="w-6 h-6 mr-2 text-blue-500" />
             Histórico Clínico
           </h2>
           <p className="text-sm text-slate-500">Linha do tempo integrada de consultas, cirurgias e diagnósticos</p>
@@ -128,7 +128,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
         {!isAdding && (
           <button
             onClick={() => setIsAdding(true)}
-            className="flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
+            className="flex items-center px-4 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
           >
             <Plus className="w-4.5 h-4.5 mr-2" />
             Novo Evento
@@ -166,7 +166,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
                   required
                   value={formData.data}
                   onChange={e => setFormData({...formData, data: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                 />
               </div>
               <div>
@@ -174,7 +174,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
                 <select
                   value={formData.tipo}
                   onChange={e => setFormData({...formData, tipo: e.target.value as MedicalEvent['tipo']})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                 >
                   <option value="Consulta">Consulta</option>
                   <option value="Cirurgia">Cirurgia</option>
@@ -190,7 +190,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
                   required
                   value={formData.descricao}
                   onChange={e => setFormData({...formData, descricao: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                   placeholder="Ex: Remoção de vesícula, Check-up anual, Diagnóstico de asma..."
                 />
               </div>
@@ -200,7 +200,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
                   type="text"
                   value={formData.medicoLocal}
                   onChange={e => setFormData({...formData, medicoLocal: e.target.value})}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-colors"
                   placeholder="Ex: Dr. Roberto Costa, Hospital Albert Einstein"
                 />
               </div>
@@ -242,7 +242,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
               </button>
               <button
                 type="submit"
-                className="px-4 py-2.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-colors shadow-sm"
+                className="px-4 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-colors shadow-sm"
               >
                 Salvar Evento
               </button>
@@ -262,7 +262,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
               placeholder="Buscar histórico..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm font-semibold text-slate-700 bg-slate-50/50 focus:bg-white transition-all"
+              className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm font-semibold text-slate-700 bg-slate-50/50 focus:bg-white transition-all"
             />
           </div>
 
@@ -280,8 +280,8 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
                 onClick={() => setFilterType(tab.id)}
                 className={`whitespace-nowrap px-3 py-1.5 text-xs font-bold rounded-lg border transition-all ${
                   filterType === tab.id
-                    ? 'bg-indigo-50 border-indigo-200 text-indigo-700'
-                    : 'bg-white border-slate-100 text-slate-500 hover:bg-slate-50'
+                    ? 'bg-blue-50 border-blue-205 text-blue-700'
+                    : 'bg-white border-slate-105 text-slate-500 hover:bg-slate-50'
                 }`}
               >
                 {tab.label}
@@ -357,7 +357,7 @@ export function MedicalHistory({ events, onAddEvent, onRemoveEvent }: MedicalHis
                                 href={event.documentUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded-lg transition-all"
+                                className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
                               >
                                 <Download className="w-3.5 h-3.5 mr-1" />
                                 Visualizar Anexo

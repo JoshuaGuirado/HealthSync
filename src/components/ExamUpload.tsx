@@ -77,10 +77,10 @@ export function ExamUpload({ onExamAdded }: ExamUploadProps) {
         layout
         className={`relative border-2 border-dashed rounded-3xl p-10 text-center transition-all ${
           isDragging 
-            ? 'border-indigo-500 bg-indigo-500/5 shadow-inner scale-[1.01]' 
+            ? 'border-blue-500 bg-blue-500/5 shadow-inner scale-[1.01]' 
             : isProcessing 
-              ? 'border-indigo-400 bg-slate-50' 
-              : 'border-slate-300 hover:border-indigo-400 bg-white shadow-sm'
+              ? 'border-blue-400 bg-slate-50' 
+              : 'border-slate-300 hover:border-blue-400 bg-white shadow-sm'
         }`}
         onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
         onDragLeave={() => setIsDragging(false)}
@@ -104,8 +104,8 @@ export function ExamUpload({ onExamAdded }: ExamUploadProps) {
               className="flex flex-col items-center justify-center space-y-5 py-6"
             >
               <div className="relative">
-                <div className="w-16 h-16 rounded-full border-4 border-indigo-100 border-t-indigo-600 animate-spin"></div>
-                <FileUp className="w-6 h-6 text-indigo-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                <div className="w-16 h-16 rounded-full border-4 border-blue-100 border-t-blue-600 animate-spin"></div>
+                <FileUp className="w-6 h-6 text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
               </div>
               <div className="space-y-1">
                 <p className="text-base font-bold text-slate-800 font-display">Analisando exame com IA...</p>
@@ -139,7 +139,7 @@ export function ExamUpload({ onExamAdded }: ExamUploadProps) {
               animate={{ opacity: 1 }}
               className="flex flex-col items-center justify-center space-y-5 py-4"
             >
-              <div className="p-4 bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-2xl">
+              <div className="p-4 bg-blue-50 border border-blue-100 text-blue-600 rounded-2xl">
                 <Upload className="w-8 h-8" />
               </div>
               <div className="space-y-2">
@@ -147,7 +147,7 @@ export function ExamUpload({ onExamAdded }: ExamUploadProps) {
                   Arraste seu laudo aqui ou{' '}
                   <button 
                     onClick={() => fileInputRef.current?.click()} 
-                    className="text-indigo-600 hover:text-indigo-700 hover:underline font-bold transition-all"
+                    className="text-blue-600 hover:text-blue-700 hover:underline font-bold transition-all"
                   >
                     busque no computador
                   </button>

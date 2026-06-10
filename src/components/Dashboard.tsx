@@ -10,7 +10,6 @@ import {
   User, 
   Droplet, 
   ShieldAlert, 
-  TrendingUp, 
   ArrowRight,
   Clock,
   ChevronRight
@@ -92,28 +91,28 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
       {/* Hero Header Card */}
       <motion.div 
         variants={itemVariants}
-        className="relative overflow-hidden rounded-3xl bg-gradient-premium p-8 text-white shadow-xl shadow-indigo-500/10"
+        className="relative overflow-hidden rounded-3xl bg-gradient-premium p-8 text-white shadow-xl shadow-blue-500/10"
       >
         <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 rounded-full bg-indigo-600/20 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 rounded-full bg-blue-600/20 blur-3xl"></div>
         
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/20 backdrop-blur-md border border-white/20">
-              <Sparkles className="w-3.5 h-3.5 mr-1.5 text-pink-200 animate-pulse" />
+              <Sparkles className="w-3.5 h-3.5 mr-1.5 text-blue-250 animate-pulse" />
               Prontuário Inteligente Ativo
             </span>
             <h1 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight">
               Olá, {profile.nome.split(' ')[0]}! 👋
             </h1>
-            <p className="text-indigo-100 max-w-xl text-base leading-relaxed">
+            <p className="text-blue-100 max-w-xl text-base leading-relaxed">
               Todos os seus exames, carteira de vacinas e histórico clínico reunidos em uma experiência segura orientada por Inteligência Artificial.
             </p>
           </div>
           
           <button 
             onClick={() => onNavigate('assistente')}
-            className="shrink-0 flex items-center px-6 py-3.5 bg-white text-indigo-600 hover:bg-indigo-50 transition-all font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+            className="shrink-0 flex items-center px-6 py-3.5 bg-white text-blue-600 hover:bg-blue-50 transition-all font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
           >
             Falar com Assistente IA
             <ArrowRight className="ml-2 w-4.5 h-4.5" />
@@ -145,7 +144,7 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
             val: medicalEvents.length, 
             desc: 'Eventos na linha do tempo', 
             icon: ClipboardList, 
-            color: 'from-purple-500 to-indigo-500', 
+            color: 'from-blue-600 to-indigo-600', 
             tab: 'historico' as const 
           },
           { 
@@ -153,20 +152,20 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
             val: profile.alergias ? profile.alergias.split(',').length : 0, 
             desc: 'Fatores de risco', 
             icon: ShieldAlert, 
-            color: 'from-rose-500 to-pink-500', 
+            color: 'from-cyan-500 to-blue-500', 
             tab: 'perfil' as const 
           },
         ].map((met, idx) => (
           <div
             key={idx}
             onClick={() => onNavigate(met.tab)}
-            className="glass-card hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-500/5 transition-all p-5 rounded-2xl cursor-pointer group flex flex-col justify-between"
+            className="glass-card hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/5 transition-all p-5 rounded-2xl cursor-pointer group flex flex-col justify-between"
           >
             <div className="flex items-start justify-between">
               <div className={`p-3 rounded-xl bg-gradient-to-br ${met.color} text-white`}>
                 <met.icon className="w-5 h-5" />
               </div>
-              <span className="text-xs font-semibold text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+              <span className="text-xs font-semibold text-blue-500 bg-blue-50 px-2 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
                 Ver <ChevronRight className="w-3 h-3 ml-0.5" />
               </span>
             </div>
@@ -193,7 +192,7 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
           {/* Health Indicators Box */}
           <div className="glass-card p-6 rounded-2xl space-y-5">
             <h3 className="text-lg font-bold text-slate-900 font-display flex items-center">
-              <Activity className="w-5 h-5 mr-2 text-indigo-500" />
+              <Activity className="w-5 h-5 mr-2 text-blue-500" />
               Indicadores de Saúde
             </h3>
             
@@ -253,14 +252,14 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
                 onClick={() => onNavigate('exames')}
                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-100/50 transition-colors text-center"
               >
-                <Plus className="w-6 h-6 text-indigo-500 mb-2" />
+                <Plus className="w-6 h-6 text-blue-500 mb-2" />
                 <span className="text-xs font-bold text-slate-700">Subir Exame</span>
               </button>
               <button 
                 onClick={() => onNavigate('resumo')}
                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-100/50 transition-colors text-center"
               >
-                <Sparkles className="w-6 h-6 text-purple-500 mb-2" />
+                <Sparkles className="w-6 h-6 text-cyan-500 mb-2" />
                 <span className="text-xs font-bold text-slate-700">Resumo de IA</span>
               </button>
             </div>
@@ -274,7 +273,7 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 font-display flex items-center">
-                    <Clock className="w-5 h-5 mr-2 text-indigo-500" />
+                    <Clock className="w-5 h-5 mr-2 text-blue-500" />
                     Atividades Recentes
                   </h3>
                   <p className="text-xs text-slate-500 mt-0.5">Últimos eventos adicionados ao seu prontuário</p>
@@ -282,7 +281,7 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
                 
                 <button 
                   onClick={() => onNavigate('historico')}
-                  className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 flex items-center"
+                  className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center"
                 >
                   Ver Tudo
                   <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
@@ -310,7 +309,7 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
                       tabName = 'vacinacao';
                     } else if (act.type === 'event') {
                       Icon = ClipboardList;
-                      colorClass = 'bg-purple-100 text-purple-600 border-purple-200';
+                      colorClass = 'bg-blue-100 text-blue-600 border-blue-200';
                       badgeLabel = act.subtitle;
                       tabName = 'historico';
                     }
@@ -329,7 +328,7 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
                             <span className="inline-block px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-slate-50 border border-slate-100 text-slate-500 mb-1">
                               {badgeLabel}
                             </span>
-                            <h4 className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                            <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                               {act.title}
                             </h4>
                             <p className="text-xs text-slate-500 mt-0.5">{act.subtitle}</p>
@@ -350,9 +349,9 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
             </div>
 
             {allActivities.length > 0 && (
-              <div className="mt-6 p-4 rounded-xl bg-gradient-premium-soft border border-indigo-50/50 flex items-center justify-between">
+              <div className="mt-6 p-4 rounded-xl bg-gradient-premium-soft border border-blue-50/50 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-indigo-100 text-indigo-600 rounded-lg">
+                  <div className="p-2 bg-blue-100 text-blue-600 rounded-lg">
                     <Sparkles className="w-4 h-4 animate-spin-slow" />
                   </div>
                   <div>
@@ -362,7 +361,7 @@ export function Dashboard({ exams, vaccines, medicalEvents, onNavigate, profile 
                 </div>
                 <button 
                   onClick={() => onNavigate('resumo')}
-                  className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-lg transition-colors shadow-sm"
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-lg transition-colors shadow-sm"
                 >
                   Gerar Resumo
                 </button>

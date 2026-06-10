@@ -121,10 +121,10 @@ export default function App() {
       {/* Mobile Top Header */}
       <header className="lg:hidden bg-white border-b border-slate-100 px-4 h-16 flex items-center justify-between sticky top-0 z-30 shadow-sm">
         <div className="flex items-center space-x-2.5">
-          <div className="bg-gradient-premium p-1.5 rounded-xl text-white shadow-md shadow-indigo-500/10">
+          <div className="bg-gradient-premium p-1.5 rounded-xl text-white shadow-md shadow-blue-500/10">
             <Activity className="w-5 h-5" />
           </div>
-          <span className="text-lg font-display font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-800">
+          <span className="text-lg font-display font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
             Health Sync
           </span>
         </div>
@@ -132,7 +132,7 @@ export default function App() {
         <div className="flex items-center space-x-2">
           <button 
             onClick={() => setActiveTab('notificacoes')}
-            className={`p-2 rounded-xl text-slate-400 hover:text-slate-600 transition-colors relative ${activeTab === 'notificacoes' ? 'bg-slate-100 text-indigo-600' : ''}`}
+            className={`p-2 rounded-xl text-slate-400 hover:text-slate-600 transition-colors relative ${activeTab === 'notificacoes' ? 'bg-slate-100 text-blue-600' : ''}`}
           >
             <Bell className="w-5 h-5" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-rose-500 rounded-full border-2 border-white"></span>
@@ -166,7 +166,7 @@ export default function App() {
                   }}
                   className={`w-full flex items-center justify-between px-4 py-3 text-sm font-bold rounded-xl transition-all ${
                     activeTab === item.id 
-                      ? 'bg-indigo-50 text-indigo-600 border border-indigo-100/50' 
+                      ? 'bg-blue-50 text-blue-600 border border-blue-100/50' 
                       : 'text-slate-600 hover:bg-slate-50'
                   }`}
                 >
@@ -205,11 +205,11 @@ export default function App() {
         {/* Brand Header */}
         <div className="h-16 flex items-center px-5 border-b border-slate-100 justify-between">
           <div className="flex items-center space-x-3 overflow-hidden">
-            <div className="bg-gradient-premium p-2 rounded-xl text-white shadow-lg shadow-indigo-500/15 shrink-0">
+            <div className="bg-gradient-premium p-2 rounded-xl text-white shadow-lg shadow-blue-500/15 shrink-0">
               <Activity className="w-5 h-5" />
             </div>
             {!sidebarCollapsed && (
-              <span className="text-lg font-display font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-800">
+              <span className="text-lg font-display font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                 Health Sync
               </span>
             )}
@@ -233,14 +233,14 @@ export default function App() {
                 onClick={() => setActiveTab(item.id as Tab)}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-bold rounded-xl transition-all group relative ${
                   isSelected 
-                    ? 'bg-indigo-50 text-indigo-600 border border-indigo-100/50 shadow-sm shadow-indigo-500/5' 
+                    ? 'bg-blue-50 text-blue-600 border border-blue-100/50 shadow-sm shadow-blue-500/5' 
                     : 'text-slate-600 hover:bg-slate-50 border border-transparent'
                 }`}
                 title={sidebarCollapsed ? item.label : undefined}
               >
                 <div className="flex items-center min-w-0">
                   <item.icon className={`w-5 h-5 shrink-0 transition-colors ${
-                    isSelected ? 'text-indigo-600' : 'text-slate-400 group-hover:text-slate-600'
+                    isSelected ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-600'
                   }`} />
                   {!sidebarCollapsed && <span className="ml-3 truncate">{item.label}</span>}
                 </div>
@@ -253,7 +253,7 @@ export default function App() {
                 
                 {/* Visual select indicators */}
                 {isSelected && (
-                  <span className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-indigo-600 rounded-r-full"></span>
+                  <span className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-blue-600 rounded-r-full"></span>
                 )}
               </button>
             );
@@ -272,7 +272,7 @@ export default function App() {
                   {profile.nome.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase()}
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-bold text-slate-800 truncate group-hover:text-indigo-600 transition-colors">
+                  <p className="text-xs font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors">
                     {profile.nome}
                   </p>
                   <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Paciente</p>
@@ -321,7 +321,7 @@ export default function App() {
             <button 
               onClick={() => setActiveTab('notificacoes')}
               className={`p-2.5 rounded-xl border border-slate-200 text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-all relative ${
-                activeTab === 'notificacoes' ? 'bg-indigo-50 border-indigo-200 text-indigo-600' : 'bg-white'
+                activeTab === 'notificacoes' ? 'bg-blue-50 border-blue-200 text-blue-600' : 'bg-white'
               }`}
             >
               <Bell className="w-4.5 h-4.5" />
@@ -334,7 +334,7 @@ export default function App() {
               onClick={() => setActiveTab('perfil')}
               className="flex items-center space-x-3 bg-white border border-slate-200 hover:border-slate-300 shadow-sm pl-3 pr-4 py-1.5 rounded-xl cursor-pointer transition-colors"
             >
-              <div className="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-xs">
+              <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 text-blue-600 font-bold flex items-center justify-center text-xs">
                 {profile.nome.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase()}
               </div>
               <span className="text-xs font-bold text-slate-800">{profile.nome}</span>
@@ -372,7 +372,7 @@ export default function App() {
                   <section>
                     <div className="flex items-center justify-between mb-4 max-w-4xl mx-auto">
                       <h2 className="text-base font-bold text-slate-800 font-display">Histórico de Laudos</h2>
-                      <span className="text-xs font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full">
+                      <span className="text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">
                         {exams.length} exame(s)
                       </span>
                     </div>
@@ -435,10 +435,10 @@ export default function App() {
               key={item.id}
               onClick={() => setActiveTab(item.id as Tab)}
               className={`flex flex-col items-center justify-center flex-1 h-full py-1 text-[10px] font-bold transition-all ${
-                isSelected ? 'text-indigo-600' : 'text-slate-400'
+                isSelected ? 'text-blue-600' : 'text-slate-400'
               }`}
             >
-              <item.icon className={`w-5.5 h-5.5 mb-0.5 ${isSelected ? 'text-indigo-600' : 'text-slate-400'}`} />
+              <item.icon className={`w-5.5 h-5.5 mb-0.5 ${isSelected ? 'text-blue-600' : 'text-slate-400'}`} />
               <span>{item.label}</span>
             </button>
           );
