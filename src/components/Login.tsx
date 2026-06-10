@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Activity, ArrowRight, ShieldCheck, HeartPulse, FileText, Lock } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Activity, ArrowRight, ShieldCheck, HeartPulse, Lock } from 'lucide-react';
 
 interface LoginProps {
   onLogin: () => void;
@@ -21,94 +22,117 @@ export function Login({ onLogin }: LoginProps) {
   };
 
   return (
-    <div className="min-h-screen flex bg-white font-sans">
+    <div className="min-h-screen flex bg-[#0f172a] font-sans relative overflow-hidden">
+      {/* Background Animated Circles */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-500/10 blur-3xl animate-pulse duration-[10000ms]"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-pink-500/10 blur-3xl animate-pulse duration-[8000ms]"></div>
+
       {/* Left Side - Branding & Value Prop */}
-      <div className="hidden lg:flex lg:w-1/2 relative bg-blue-600 overflow-hidden items-center justify-center">
-        {/* Abstract Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-blue-500/30 blur-3xl"></div>
-          <div className="absolute bottom-[10%] -right-[10%] w-[60%] h-[60%] rounded-full bg-indigo-500/30 blur-3xl"></div>
-        </div>
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden items-center justify-center border-r border-slate-800/50">
+        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-950 via-slate-950 to-purple-950 z-0"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/30 via-transparent to-transparent z-0"></div>
 
-        <div className="relative z-10 p-16 text-white max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <div>
-            <div className="flex items-center space-x-3 mb-12">
-              <div className="bg-white p-2 rounded-xl">
-                <Activity className="w-8 h-8 text-blue-600" />
-              </div>
-              <span className="text-3xl font-display font-bold tracking-tight">Health Sync</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 p-16 text-white max-w-2xl space-y-12"
+        >
+          <div className="flex items-center space-x-3.5">
+            <div className="bg-gradient-premium p-2.5 rounded-2xl shadow-lg shadow-indigo-500/20">
+              <Activity className="w-7 h-7 text-white" />
             </div>
+            <span className="text-3xl font-display font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-100 to-indigo-300">
+              Health Sync
+            </span>
+          </div>
 
-            <h1 className="text-5xl font-display font-bold leading-tight mb-6">
+          <div className="space-y-6">
+            <h1 className="text-5xl font-display font-extrabold leading-tight tracking-tight">
               Seu histórico médico,<br />
-              <span className="text-blue-200">finalmente em suas mãos.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                centralizado e inteligente.
+              </span>
             </h1>
             
-            <p className="text-lg text-blue-100 mb-12 max-w-lg leading-relaxed">
-              Unifique exames, vacinas e consultas em um único lugar. Use Inteligência Artificial para entender sua saúde e compartilhar resumos com seu médico em segundos.
+            <p className="text-base text-slate-300 leading-relaxed max-w-lg">
+              Unifique exames, vacinas e consultas em um único espaço. Entenda sua saúde com resumos gerados por Inteligência Artificial e compartilhe com seu médico de forma simples e rápida.
             </p>
-
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="bg-blue-500/50 p-3 rounded-full">
-                  <ShieldCheck className="w-6 h-6 text-blue-100" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Privacidade Garantida</h3>
-                  <p className="text-blue-200 text-sm">Seus dados são anonimizados e criptografados.</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="bg-blue-500/50 p-3 rounded-full">
-                  <HeartPulse className="w-6 h-6 text-blue-100" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Foco no Paciente</h3>
-                  <p className="text-blue-200 text-sm">Você é o dono do seu prontuário, não a clínica.</p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+
+          <div className="space-y-6 pt-4">
+            {[
+              {
+                icon: ShieldCheck,
+                title: 'Privacidade & Anonimização',
+                desc: 'Seus dados são lidos pela IA com segurança e anonimização de informações sensíveis.',
+                color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20'
+              },
+              {
+                icon: HeartPulse,
+                title: 'Controle Total do Paciente',
+                desc: 'Você é o proprietário dos seus dados médicos, prontuários e carteiras de imunizações.',
+                color: 'text-pink-400 bg-pink-500/10 border-pink-500/20'
+              }
+            ].map((prop, idx) => (
+              <div key={idx} className="flex items-start space-x-4">
+                <div className={`p-3 rounded-xl border shrink-0 ${prop.color}`}>
+                  <prop.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base text-slate-100">{prop.title}</h3>
+                  <p className="text-slate-400 text-sm mt-1">{prop.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 lg:p-16 bg-gray-50">
-        <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-150">
-          <div className="lg:hidden flex items-center space-x-2 mb-8 justify-center">
-            <div className="bg-blue-600 p-1.5 rounded-lg">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 lg:p-16 z-10">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="w-full max-w-md bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl border border-slate-800 shadow-2xl shadow-indigo-950/20"
+        >
+          {/* Logo on Mobile */}
+          <div className="lg:hidden flex items-center space-x-2.5 mb-8 justify-center">
+            <div className="bg-gradient-premium p-2 rounded-xl">
               <Activity className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-display font-bold text-gray-900">Health Sync</span>
+            <span className="text-2xl font-display font-extrabold text-white">Health Sync</span>
           </div>
 
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-display font-bold text-gray-900">Bem-vindo de volta</h2>
-            <p className="text-gray-500 mt-2 text-sm">Acesse seu prontuário digital inteligente.</p>
+            <h2 className="text-2xl font-display font-bold text-white tracking-tight">Bem-vindo ao Health Sync</h2>
+            <p className="text-slate-400 mt-2 text-sm">Acesse seu prontuário digital inteligente</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">E-mail</label>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-slate-300">E-mail</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-gray-50 focus:bg-white"
+                className="w-full px-4 py-3 rounded-2xl border border-slate-800 bg-slate-950/40 text-slate-200 placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                placeholder="exemplo@email.com"
                 required
               />
             </div>
             
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-sm font-medium text-gray-700">Senha</label>
-                <a href="#" className="text-sm text-blue-600 hover:text-blue-700 font-medium">Esqueceu a senha?</a>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <label className="block text-sm font-semibold text-slate-300">Senha</label>
+                <a href="#" className="text-xs text-indigo-400 hover:text-indigo-300 font-bold transition-colors">Esqueceu a senha?</a>
               </div>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-gray-50 focus:bg-white"
+                className="w-full px-4 py-3 rounded-2xl border border-slate-800 bg-slate-950/40 text-slate-200 placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
                 required
               />
             </div>
@@ -116,26 +140,26 @@ export function Login({ onLogin }: LoginProps) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex items-center justify-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors disabled:opacity-70"
+              className="w-full flex items-center justify-center py-3.5 px-4 rounded-2xl text-sm font-bold text-white bg-gradient-premium hover:opacity-95 active:scale-[0.98] transition-all shadow-lg shadow-indigo-500/20 disabled:opacity-75 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               ) : (
                 <>
                   Entrar no Prontuário
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4.5 h-4.5" />
                 </>
               )}
             </button>
           </form>
 
-          <div className="mt-8 pt-6 border-t border-gray-100">
-            <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
-              <Lock className="w-4 h-4" />
-              <span>Acesso seguro e criptografado (E2EE)</span>
+          <div className="mt-8 pt-6 border-t border-slate-800/80">
+            <div className="flex items-center justify-center space-x-2 text-xs text-slate-500 font-medium">
+              <Lock className="w-4 h-4 text-slate-600" />
+              <span>Acesso seguro com criptografia de ponta a ponta</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
