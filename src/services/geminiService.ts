@@ -1,13 +1,24 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Exam } from "../types";
 
-// Initialize the Gemini API client
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+let aiInstance: GoogleGenAI | null = null;
+
+function getAiClient(): GoogleGenAI {
+  if (!aiInstance) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error("GEMINI_API_KEY não configurada. Por favor, adicione a chave de API nas configurações do Vercel.");
+    }
+    aiInstance = new GoogleGenAI({ apiKey });
+  }
+  return aiInstance;
+}
 
 const SYSTEM_INSTRUCTION = `Você é um assistente de estruturação de dados de saúde. Sua função é organizar, classificar e resumir laudos médicos fornecidos pelo usuário. Você NUNCA deve dar diagnósticos, sugerir tratamentos ou substituir aconselhamento médico profissional. Baseie-se ESTRITAMENTE nos dados fornecidos. Sempre cite os dados do exame ao responder.`;
 
 export async function extractExamData(base64Data: string, mimeType: string) {
   try {
+    const ai = getAiClient();
     const response = await ai.models.generateContent({
       model: "gemini-3.1-pro-preview",
       contents: [
@@ -64,6 +75,7 @@ export async function generateMedicalSummary(exams: Exam[]) {
   }
 
   try {
+    const ai = getAiClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Gere um resumo médico cronológico e conciso (Elevator Pitch Médico) baseado nos seguintes exames. 
@@ -86,6 +98,7 @@ export async function generateMedicalSummary(exams: Exam[]) {
 
 export async function askMedicalRecord(exams: Exam[], question: string, history: {role: string, text: string}[] = []) {
   try {
+    const ai = getAiClient();
     const chat = ai.chats.create({
       model: "gemini-3-flash-preview",
       config: {
